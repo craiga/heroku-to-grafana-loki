@@ -1,4 +1,6 @@
 {
+  "name": "heroku-to-grafana-loki",
+  "stack": "container",
   "env": {
     "JOB_NAME": {
       "required": true,
