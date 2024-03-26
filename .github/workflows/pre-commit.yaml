@@ -14,11 +14,3 @@ jobs:
         uses: actions/checkout@v4.1.2
       - name: pre-commit
         uses: pre-commit/action@v3.0.1
-      - name: Commit changed files on failure
-        if: ${{ failure() }}
-        run: |
-          git config user.email "pre-commit-action@example.com"
-          git config user.name "pre-commit action"
-          git add .
-          git commit --message "pre-commit changes"
-          git push

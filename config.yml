@@ -9,20 +9,20 @@ positions:
 # This bit indicates what Loki instance to write the logs to. We’ll inject the
 # details and credentials through environment variables
 clients:
-- url: https://${LOKI_TENANT_ID}:${LOKI_TOKEN}@${LOKI_HOST}/loki/api/v1/push
+  - url: https://${LOKI_TENANT_ID}:${LOKI_TOKEN}@${LOKI_HOST}/loki/api/v1/push
 
 scrape_configs:
-# Job name, that will be injected in each log line
- - job_name: ${JOB_NAME}
+  # Job name, that will be injected in each log line
+  - job_name: ${JOB_NAME}
 
 # Apply relabel to keep Heroku internal labels
 relabel_configs:
-- source_labels: ['__heroku_drain_host']
-  target_label: 'host'
-- source_labels: ['__heroku_drain_app']
-  target_label: 'app'
-- source_labels: ['__heroku_drain_proc']
-  target_label: 'proc'
+  - source_labels: ["__heroku_drain_host"]
+    target_label: "host"
+  - source_labels: ["__heroku_drain_app"]
+    target_label: "app"
+  - source_labels: ["__heroku_drain_proc"]
+    target_label: "proc"
 
 # Main heroku target configuration
 heroku_drain:
