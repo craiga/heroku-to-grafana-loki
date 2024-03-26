@@ -1,0 +1,17 @@
+{
+  "env": {
+    "JOB_NAME": {
+      "required": true,
+      "description": "Name for the promtail logs scraping job. This will be added as a label to each log entry."
+    },
+    "LOKI_HOST": {
+      "required": true
+    },
+    "LOKI_TENANT_ID": {
+      "required": true
+    },
+    "LOKI_TOKEN": {
+      "required": true
+    }
+  }
+}
